@@ -44,6 +44,12 @@ for component in components:
             save_path = cur_dir + os.sep + "results"
             if not os.path.exists(save_path):
                 os.mkdir(save_path)
+
+            save_path += os.sep + component
+
+            if not os.path.exists(save_path):
+                os.mkdir(save_path)
+
             image.save(save_path + os.sep + f"{component}_{index}.png", format="png")
 
             image_data['name'] = f"{component}_{index}"
